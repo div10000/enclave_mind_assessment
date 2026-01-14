@@ -37,7 +37,7 @@ app.use("/api", task2DataRoute);
 // --------------------
 app.get("/api/protected", authMiddleware, (req, res) => {
   // Only accessible if middleware passes
-  res.json({ message: "You have access to this protected route!" });
+  res.json({ message: "Success ! You have access to this protected route!" });
 });
 
 // --------------------

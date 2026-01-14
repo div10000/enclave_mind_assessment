@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 /**
  * Task 1 – Dynamic Search Filter
  *
- * Fetches 10 users from JSONPlaceholder API
- * and allows real-time filtering by name or email
+ * Fetches users from JSONPlaceholder API
+ * Allows real-time filtering by name or email
+ * Includes loading state
  */
 
 interface User {
@@ -18,15 +19,21 @@ interface User {
 export default function Task1Page() {
   const [users, setUsers] = useState<User[]>([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
-      .then((data) => setUsers(data))
-      .catch((err) => console.error("Fetch error:", err));
+      .then((data) => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Fetch error:", err);
+        setLoading(false);
+      });
   }, []);
 
-  // Filter users by name or email
   const filteredUsers = users.filter(
     (user) =>
       user.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -47,20 +54,31 @@ export default function Task1Page() {
         className="w-full max-w-md p-2 mb-6 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
-      <ul className="w-full max-w-md space-y-4">
-        {filteredUsers.map((user) => (
-          <li
-            key={user.id}
-            className="bg-white p-4 rounded-md shadow hover:bg-blue-50 transition"
-          >
-            <p className="font-semibold text-gray-800">{user.name}</p>
-            <p className="text-gray-600">{user.email}</p>
-          </li>
-        ))}
-        {filteredUsers.length === 0 && (
-          <li className="text-center text-gray-500">No users found</li>
-        )}
-      </ul>
+      {/* Loading Spinner */}
+      {loading && (
+        <div className="flex justify-center items-center mt-8">
+          <div className="h-10 w-10 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
+
+      {/* Users List */}
+      {!loading && (
+        <ul className="w-full max-w-md space-y-4">
+          {filteredUsers.map((user) => (
+            <li
+              key={user.id}
+              className="bg-white p-4 rounded-md shadow hover:bg-blue-50 transition"
+            >
+              <p className="font-semibold text-gray-800">{user.name}</p>
+              <p className="text-gray-600">{user.email}</p>
+            </li>
+          ))}
+
+          {filteredUsers.length === 0 && (
+            <li className="text-center text-gray-500">No users found</li>
+          )}
+        </ul>
+      )}
     </div>
   );
 }

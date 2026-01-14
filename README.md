@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Enclave Minds – Full Stack Assessment
 
-## Getting Started
+This repository contains my submission for the Enclave Minds technical assessment.
+It includes frontend, backend, and database-focused tasks implemented using Next.js, Node.js, Express, and MongoDB concepts.
 
-First, run the development server:
+>The goal of this assessment was to demonstrate:
+Frontend development skills
+Backend API design
+Authentication basics
+State management
+Clean code structure and clarity
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+>Tech Stack Used
+#Frontend
+Next.js (App Router)
+React
+Tailwind CSS
+TypeScript
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+>Backend
+Node.js
+Express.js
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+>Database (Design / Conceptual)
+MongoDB
+Mongoose
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+>Project Overview
+The project is divided into 7 tasks.
+Some tasks are frontend-based, some backend-only, and some focus on system design.
+👉🏻Only tasks that require a UI have a frontend page.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+📁Code Location
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+>Frontend tasks,
+Task 1, Task 5, Task 4 (frontend part),
+👉🏻Located inside the app/ folder
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+>Backend tasks
+Task 2, Task 3, Task 6, Task 7, Task 4 (backend part)
+👉🏻Located inside the backend/ folder
 
-## Deploy on Vercel
+▶️ How to Run and Get Proper Results
+> Step 1
+In the root folder run
+>> npm i
+(This will install all the dependencies)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+>Step 2
+After installation, In the root project folder, run:
+>> npm run dev
+This will start the frontend on:
+http://localhost:3000
+
+
+>Step 2
+Open a new terminal, go to the backend folder with
+>> cd backend
+
+>Step 3
+Inside  backend folder, run 
+>> node server.js
+This will start the backend server on:
+http://localhost:5000 
+
+> Open the frontend (localhost:3000) in the browser to see the assessment overview and UI-based tasks.
