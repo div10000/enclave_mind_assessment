@@ -8,8 +8,8 @@ export default function HomeButton() {
     <Link
   href="/"
   className="
-    fixed bottom-16 z-50
-    h-12 w-12 rounded-full bg-black text-white
+    fixed top-0 z-50
+    h-8 w-8 rounded-full bg-black text-white
     flex items-center justify-center text-3xl shadow-xl
     hover:bg-gray-800 transition
   "

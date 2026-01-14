@@ -25,15 +25,15 @@ export default function JWTAuthDemoPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
+    <div className="text-black min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
       <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">
           Task 4: JWT Authentication Flow
         </h2>
 
         <p className="mb-6 text-gray-600">
-          Click the button below to call a protected backend API
-          Make sure express server is running !
+          Click the button below to call a protected backend API<br />
+          👉🏻Make sure express server is running !
         </p>
 
         <button
@@ -44,7 +44,8 @@ export default function JWTAuthDemoPage() {
         </button>
 
         {response && (
-          <pre className="mt-6 bg-gray-100 p-4 rounded-md text-sm overflow-x-auto text-gray-800">
+          <pre className="mt-6 bg-gray-100 p-4 rounded-md text-sm text-gray-800 whitespace-pre-wrap break-words">
+
             {response}
           </pre>
         )}
